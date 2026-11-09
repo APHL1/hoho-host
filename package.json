@@ -1,0 +1,18 @@
+{
+  "name": "hoho-host",
+  "version": "1.0.0",
+  "description": "Self-hosted family wishlists: reserve gifts without duplicates, Secret Santa, anonymous questions. Zero dependencies.",
+  "license": "AGPL-3.0-or-later",
+  "author": "APHL1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/APHL1/hoho-host.git"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning server.js"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}

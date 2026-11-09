@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>HoHoHost</Name>
+  <Repository>ghcr.io/aphl1/hoho-host:latest</Repository>
+  <Registry>https://github.com/APHL1/hoho-host/pkgs/container/hoho-host</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/APHL1/hoho-host/issues</Support>
+  <Project>https://github.com/APHL1/hoho-host</Project>
+  <Overview>Self-hosted family wishlists for Christmas (and birthdays). Everyone adds their wishes, family members reserve what they will offer so there are no duplicates, and the recipient never sees what was reserved. Includes Secret Santa draw, anonymous questions, a hidden family chat per list, purchase tracking, kids' lists managed by parents, and add-to-list from the phone share menu. Zero dependencies, SQLite, daily automatic backups. French UI.</Overview>
+  <Description>HoHoHost is a self-hosted wishlist app for families.[br][br]
+- Everyone adds wishes (paste a product link: name, picture and price are filled in automatically, Amazon affiliate links supported)[br]
+- Family members reserve what they will offer: no duplicates, and the recipient never sees reservations on their own list[br]
+- Secret Santa draw with exclusions, anonymous questions, hidden family chat per list[br]
+- Purchase tracking (reserved / bought / wrapped) with estimated budget[br]
+- Kids' lists co-managed by parents, PWA with Android share target[br]
+- Sign-in with first name + last name + 6-digit code, only for members added by the admin[br][br]
+Open the WebUI after install: a setup wizard creates the admin account. Interface in French (English planned).</Description>
+  <Category>Productivity: Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:3000]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/APHL1/hoho-host/main/templates/hoho-host.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/APHL1/hoho-host/main/assets/icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <Requires/>
+  <Config Name="WebUI Port" Target="3000" Default="3000" Mode="tcp" Description="Port of the web interface" Type="Port" Display="always" Required="true" Mask="false">3000</Config>
+  <Config Name="Data" Target="/data" Default="/mnt/user/appdata/hoho-host" Mode="rw" Description="Database, photos and daily backups" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/hoho-host</Config>
+  <Config Name="TZ" Target="TZ" Default="Europe/Paris" Mode="" Description="Time zone" Type="Variable" Display="always" Required="false" Mask="false">Europe/Paris</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="User ID owning /data" Type="Variable" Display="advanced" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="Group ID owning /data" Type="Variable" Display="advanced" Required="false" Mask="false">100</Config>
+  <Config Name="SETUP_CODE" Target="SETUP_CODE" Default="" Mode="" Description="Optional: code required by the first-run setup wizard (useful if the port is exposed to the internet before setup)" Type="Variable" Display="advanced" Required="false" Mask="true"></Config>
+</Container>

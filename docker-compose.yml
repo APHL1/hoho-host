@@ -1,0 +1,15 @@
+services:
+  hoho-host:
+    image: ghcr.io/aphl1/hoho-host:latest
+    container_name: hoho-host
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - TZ=Europe/Paris
+      - PUID=1000
+      - PGID=1000
+      # Optionnel : protège l'assistant de 1er démarrage si le port est exposé sur Internet
+      # - SETUP_CODE=choisis-un-code
+    volumes:
+      - ./data:/data

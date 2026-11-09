@@ -1,0 +1,63 @@
+name: hoho-host
+services:
+  hoho-host:
+    image: ghcr.io/aphl1/hoho-host:latest
+    container_name: hoho-host
+    restart: unless-stopped
+    ports:
+      - target: 3000
+        published: "3000"
+        protocol: tcp
+    environment:
+      TZ: Europe/Paris
+      PUID: "1000"
+      PGID: "1000"
+    volumes:
+      - type: bind
+        source: /DATA/AppData/hoho-host
+        target: /data
+    x-casaos:
+      envs:
+        - container: TZ
+          description:
+            en_us: Time zone
+            fr_fr: Fuseau horaire
+      ports:
+        - container: "3000"
+          description:
+            en_us: Web interface port
+            fr_fr: Port de l'interface web
+      volumes:
+        - container: /data
+          description:
+            en_us: Database, photos and backups
+            fr_fr: Base de données, photos et sauvegardes
+
+x-casaos:
+  architectures:
+    - amd64
+    - arm64
+  main: hoho-host
+  author: APHL1
+  developer: APHL1
+  category: Utilities
+  port_map: "3000"
+  scheme: http
+  index: /
+  icon: https://raw.githubusercontent.com/APHL1/hoho-host/main/assets/icon.png
+  screenshot_link:
+    - https://raw.githubusercontent.com/APHL1/hoho-host/main/docs/screenshots/home.png
+    - https://raw.githubusercontent.com/APHL1/hoho-host/main/docs/screenshots/list.png
+    - https://raw.githubusercontent.com/APHL1/hoho-host/main/docs/screenshots/gifts.png
+  title:
+    en_us: HoHoHost
+  tagline:
+    en_us: Family wishlists without duplicate gifts
+    fr_fr: Listes de cadeaux en famille, sans doublons
+  description:
+    en_us: Everyone adds their wishes, the family reserves what they offer, and the recipient never sees what was reserved. Secret Santa, anonymous questions, hidden family chat, purchase tracking.
+    fr_fr: Chacun ajoute ses envies, la famille réserve ce qu'elle offre et le destinataire ne voit jamais ce qui est réservé. Père Noël secret, questions anonymes, discussion cachée, suivi des achats.
+  tips:
+    before_install:
+      en_us: Open the web UI after install and follow the setup wizard to create the admin account.
+      fr_fr: Ouvre l'interface après l'installation et suis l'assistant pour créer le compte admin.

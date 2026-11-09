@@ -1,0 +1,9 @@
+.git
+.github
+data
+docs
+templates
+assets
+ca_profile.xml
+casaos
+*.md
