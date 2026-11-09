@@ -2,7 +2,7 @@
   <img src="assets/icon.png" width="120" alt="HoHoHost icon">
 </p>
 
-<h1 align="center">HoHoHost</h1>
+<h1 align="center">HoHo-Host</h1>
 
 <p align="center"><strong>Self-hosted family wishlists. No more duplicate gifts.</strong><br>
 Everyone adds their wishes, the family reserves what they'll offer, and the recipient never sees what was reserved.</p>
