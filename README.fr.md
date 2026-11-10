@@ -60,6 +60,8 @@ Cherche **HoHoHost** dans Community Applications (une fois validé). En attendan
 https://raw.githubusercontent.com/APHL1/hoho-host/main/templates/hoho-host.xml
 ```
 
+> **Astuce Unraid :** garde le **port conteneur à 3000** (ne change que le port hôte si 3000 est pris) et fais pointer `/data` vers un **dossier dédié** comme `/mnt/user/appdata/hoho-host`, jamais vers `appdata` lui-même.
+
 ### CasaOS / ZimaOS
 
 **App Store → Installation personnalisée → Importer** le fichier [`casaos/docker-compose.yml`](casaos/docker-compose.yml).

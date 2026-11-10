@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.1 — 2026-11
+
+- Safer startup: if `/data` contains files that don't belong to HoHoHost (e.g. the whole
+  `appdata` share mapped by mistake), the container refuses to start and changes nothing.
+- Docs: Unraid setup clarified (container port 3000, dedicated appdata folder).
+
 ## 1.0.0 — 2026-11
 
 First public release.
